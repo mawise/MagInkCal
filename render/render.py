@@ -105,9 +105,9 @@ class RenderHelper:
 
     def process_inputs(self, calDict):
         # calDict = {'events': eventList, 'calStartDate': calStartDate, 'today': currDate, 'lastRefresh': currDatetime, 'batteryLevel': batteryLevel}
-        # first setup list to represent the 5 weeks in our calendar
+        # first setup list to represent the weeks in our calendar
         calList = []
-        for i in range(35):
+        for i in range(2*7): # 2 weeks, 7 days per week.  Change this number to show more weeks
             calList.append([])
 
         # retrieve calendar configuration

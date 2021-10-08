@@ -1,19 +1,22 @@
 {
-  "displayTZ": "Asia/Hong_Kong",
+  "displayTZ": "US/Central",
   "thresholdHours": 24,
   "maxEventsPerDay": 3,
   "isDisplayToScreen": false,
   "isShutdownOnComplete": false,
-  "batteryDisplayMode": 1,
+  "batteryDisplayMode": 0,
   "weekStartDay": 6,
   "dayOfWeekText": ["M", "T", "W", "T", "F", "S", "S"],
-  "screenWidth": 1304,
-  "screenHeight": 984,
-  "imageWidth": 984,
-  "imageHeight": 1304,
+  "screenWidth": 800,
+  "screenHeight": 480,
+  "imageWidth": 800,
+  "imageHeight": 480,
   "rotateAngle": 270,
   "is24h": false,
   "calendars": [
-    "primary"
+    "primary",
+    "mp4umksf1nf4k1k5r082kso82c@group.calendar.google.com",
+    "family01385155303862010841@group.calendar.google.com",
+    "kub3n57bqdbdekepgvrc8b4v5k@group.calendar.google.com"
   ]
 }
