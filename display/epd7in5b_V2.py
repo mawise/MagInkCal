@@ -29,7 +29,7 @@
 
 
 import logging
-from . import epdconfig
+import display.epdconfig as epdconfig
 
 # Display resolution
 EPD_WIDTH       = 800
