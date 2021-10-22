@@ -1,0 +1,5 @@
+Reference: https://github.com/waveshare/e-Paper/tree/master/RaspberryPi_JetsonNano/python
+
+eink libraries come from lib/waveshare_epd/ directory
+
+Change import statement to pull config file
