@@ -136,7 +136,7 @@ class RenderHelper:
 
         # Insert battery icon
         # batteryDisplayMode - 0: do not show / 1: always show / 2: show when battery is low
-        battLevel = calDict['batteryLevel']
+        #battLevel = calDict['batteryLevel']
 
         if batteryDisplayMode == 0:
             battText = 'batteryHide'
