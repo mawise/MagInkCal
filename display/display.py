@@ -17,7 +17,7 @@ class DisplayHelper:
         self.screenwidth = width
         self.screenheight = height
         self.epd = eink.EPD()
-        self.epd.Init()
+        self.epd.init()
 
     def update(self, blackimg, redimg):
         # Updates the display with the grayscale and red images
