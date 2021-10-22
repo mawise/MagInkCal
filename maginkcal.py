@@ -52,10 +52,10 @@ def main():
         # Note: For Python datetime.weekday() - Monday = 0, Sunday = 6
         # For this implementation, each week starts on a Sunday and the calendar begins on the nearest elapsed Sunday
         # The calendar will also display 5 weeks of events to cover the upcoming month, ending on a Saturday
-        powerService = PowerHelper()
-        powerService.sync_time()
-        currBatteryLevel = powerService.get_battery()
-        logger.info('Battery level at start: {:.3f}'.format(currBatteryLevel))
+#        powerService = PowerHelper()
+#        powerService.sync_time()
+#        currBatteryLevel = powerService.get_battery()
+#        logger.info('Battery level at start: {:.3f}'.format(currBatteryLevel))
 
         currDatetime = dt.datetime.now(displayTZ)
         logger.info("Time synchronised to {}".format(currDatetime))
@@ -73,7 +73,7 @@ def main():
 
         # Populate dictionary with information to be rendered on e-ink display
         calDict = {'events': eventList, 'calStartDate': calStartDate, 'today': currDate, 'lastRefresh': currDatetime,
-                   'batteryLevel': currBatteryLevel, 'batteryDisplayMode': batteryDisplayMode,
+                   'batteryDisplayMode': batteryDisplayMode,
                    'dayOfWeekText': dayOfWeekText, 'weekStartDay': weekStartDay, 'maxEventsPerDay': maxEventsPerDay,
                    'is24hour': is24hour}
 
@@ -89,8 +89,8 @@ def main():
             displayService.update(calBlackImage, calRedImage)
             displayService.sleep()
 
-        currBatteryLevel = powerService.get_battery()
-        logger.info('Battery level at end: {:.3f}'.format(currBatteryLevel))
+        #currBatteryLevel = powerService.get_battery()
+        #logger.info('Battery level at end: {:.3f}'.format(currBatteryLevel))
 
     except Exception as e:
         logger.error(e)

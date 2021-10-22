@@ -43,6 +43,7 @@ sudo raspi-config
 sudo apt update
 sudo apt-get install python3-pip
 sudo apt-get install chromium-chromedriver
+sudo apt-get install libopenjp2-7-dev
 pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 pip3 install pytz
 pip3 install selenium
