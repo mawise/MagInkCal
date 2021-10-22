@@ -23,7 +23,7 @@ class DisplayHelper:
         # Updates the display with the grayscale and red images
         # start displaying on eink display
         # self.epd.clear()
-        self.epd.display(epd.getbuffer(blackimg), epd.getbuffer(redimg))
+        self.epd.display(self.epd.getbuffer(blackimg), self.epd.getbuffer(redimg))
         self.logger.info('E-Ink display update complete.')
 
     def calibrate(self, cycles=1):
