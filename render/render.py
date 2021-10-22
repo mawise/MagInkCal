@@ -91,16 +91,16 @@ class RenderHelper:
             datetime_str = '{}:{:02d}'.format(datetimeObj.hour, datetimeObj.minute)
         else:
             if datetimeObj.minute > 0:
-                datetime_str = '.{:02d}'.format(datetimeObj.minute)
+                datetime_str = ':{:02d}'.format(datetimeObj.minute)
 
             if datetimeObj.hour == 0:
-                datetime_str = '12{}am'.format(datetime_str)
+                datetime_str = '12{}a'.format(datetime_str)
             elif datetimeObj.hour == 12:
-                datetime_str = '12{}pm'.format(datetime_str)
+                datetime_str = '12{}p'.format(datetime_str)
             elif datetimeObj.hour > 12:
-                datetime_str = '{}{}pm'.format(str(datetimeObj.hour % 12), datetime_str)
+                datetime_str = '{}{}p'.format(str(datetimeObj.hour % 12), datetime_str)
             else:
-                datetime_str = '{}{}am'.format(str(datetimeObj.hour), datetime_str)
+                datetime_str = '{}{}a'.format(str(datetimeObj.hour), datetime_str)
         return datetime_str
 
     def process_inputs(self, calDict):
@@ -166,6 +166,8 @@ class RenderHelper:
         # Populate the date and events
         cal_events_text = ''
         for i in range(len(calList)):
+            if ((i % 7) == 0) & (i>0):
+                cal_events_text += '</ol><ol class="days list-unstyled">' # new OL for each week, TODO: remove the <ol> tags from the template
             currDate = calDict['calStartDate'] + timedelta(days=i)
             dayOfMonth = currDate.day
             if currDate == calDict['today']:

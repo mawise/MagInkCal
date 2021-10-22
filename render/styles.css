@@ -126,7 +126,7 @@ Calendar Styling */
 
 .calendar .days li {
   /* min-height: 12rem; */
-  min-height: 11.5rem;
+  /* min-height: 11.5rem; */
 }
 
 .calendar .days li .date {
@@ -160,12 +160,12 @@ Calendar Styling */
 }
 
 .calendar .days li .event {
-  font-size: 1rem;
+  font-size: 0.75rem;
   /* font-weight: bold;*/
   padding: 0.1rem;
   /* color: black; */
   /* font-family: "Judson-Regular";*/
-  white-space: nowrap;
+  white-space: normal; /* "nowrap" to avoid multi-line events */
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 0rem;
