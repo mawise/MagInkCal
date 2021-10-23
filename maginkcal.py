@@ -83,9 +83,7 @@ def main():
         if isDisplayToScreen:
             from display.display import DisplayHelper
             displayService = DisplayHelper(screenWidth, screenHeight)
-            if currDate.weekday() == weekStartDay:
-                # calibrate display once a week to prevent ghosting
-                displayService.calibrate(cycles=0)  # to calibrate in production
+            displayService.calibrate(cycles=0)  # to prevent ghosting
             displayService.update(calBlackImage, calRedImage)
             displayService.sleep()
 
