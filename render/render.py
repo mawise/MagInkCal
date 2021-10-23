@@ -71,9 +71,11 @@ class RenderHelper:
             for j in range(redimg.size[1]): # since both bitmaps are identical, cycle only once and not both bitmaps
                 if rpixels[i, j][0] <= rpixels[i, j][1] and rpixels[i, j][0] <= rpixels[i, j][2]:  # if is not red
                     rpixels[i, j] = (255, 255, 255)  # change it to white in the red image bitmap
+                    bpixels[i, j] = (0, 0, 0)  # and change to black in the black image bitmap
 
                 elif bpixels[i, j][0] > bpixels[i, j][1] and bpixels[i, j][0] > bpixels[i, j][2]:  # if is red
                     bpixels[i, j] = (255, 255, 255)  # change to white in the black image bitmap
+                    rpixels[i, j] = (0, 0, 0)  # and change it to black in the red image bitmap
 
         redimg = redimg.rotate(self.rotateAngle, expand=True)
         blackimg = blackimg.rotate(self.rotateAngle, expand=True)
