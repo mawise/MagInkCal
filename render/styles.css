@@ -24,7 +24,7 @@
 }
 
 .p-3 {
-    padding: 1rem!important;
+    padding: 0px 8px 0px!important;
 }
 
 .text-center {
@@ -54,7 +54,7 @@ body {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.0;
     color: #000;
     text-align: left;
     background-color: #fff;
@@ -68,6 +68,11 @@ body {
 @font-face {
     font-family: "Quattrocento-Regular";
     src: url('Quattrocento-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Savior";
+    src: url('Savior1.ttf');
 }
 
 .container {
@@ -113,8 +118,8 @@ Calendar Styling */
 }
 
 .calendar .day-names {
-  font-size: 3.5rem;
-  line-height: 1.2;
+  font-size: 4rem;
+  line-height: 1;
   font-family: "Quattrocento-Regular";
 }
 
@@ -160,11 +165,11 @@ Calendar Styling */
 }
 
 .calendar .days li .event {
-  font-size: 0.75rem;
+  font-size: 1rem;
   /* font-weight: bold;*/
-  padding: 0.1rem;
+  padding: 0rem;
   /* color: black; */
-  /* font-family: "Judson-Regular";*/
+  font-family: "Savior";
   white-space: normal; /* "nowrap" to avoid multi-line events */
   overflow: hidden;
   text-overflow: ellipsis;
