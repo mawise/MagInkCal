@@ -183,8 +183,8 @@ class RenderHelper:
                 cal_events_text += '<div class="event'
                 if event['isUpdated']:
                     cal_events_text += ' text-danger'
-                elif currDate.month != calDict['today'].month:
-                    cal_events_text += ' text-muted'
+#                elif currDate.month != calDict['today'].month:
+#                    cal_events_text += ' text-muted'
                 if event['isMultiday']:
                     if event['startDatetime'].date() == currDate:
                         cal_events_text += '">►' + event['summary']
