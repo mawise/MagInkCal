@@ -67,24 +67,14 @@ class RenderHelper:
         blackimg = Image.open(self.currPath + '/calendar.png')  # get image)
         bpixels = blackimg.load()  # create the pixel map
 
-	# Assume Green/Blue pixels at same saturation, only colors are red/pink and black/grey/white
-        # So Red is either same as Green/Blue or Red is 255
-        # each pixel is array of R,G,B values, so [0] is red, [1] is green, [2] is blue
         for i in range(redimg.size[0]):  # loop through every pixel in the image
             for j in range(redimg.size[1]): # since both bitmaps are identical, cycle only once and not both bitmaps
-                if rpixels[i,j][0]==rpixels[i,j][1]:  # if black/grey/white
-                    if rpixels[i,j][0] > 128: # white
-                        rpixels[i, j] = (255, 255, 255)  # change it to white in the red image bitmap
-                        bpixels[i, j] = (255, 255, 255)  # change to white in the black image bitmap
-                    else: # black
-                        rpixels[i, j] = (255, 255, 255)  # change it to white in the red image bitmap
-                        bpixels[i, j] = (0, 0, 0)  # change to black in the black image bitmap
-                else: # red/pink, assume red is at saturation (==255)
+                if rpixels[i, j][0] <= rpixels[i, j][1] and rpixels[i, j][0] <= rpixels[i, j][2]:  # if is not red
+                    rpixels[i, j] = (255, 255, 255)  # change it to white in the red image bitmap
+
+                elif bpixels[i, j][0] > bpixels[i, j][1] and bpixels[i, j][0] > bpixels[i, j][2]:  # if is red
                     bpixels[i, j] = (255, 255, 255)  # change to white in the black image bitmap
-                    if rpixels[i,j][1] > 128: # light pink or white
-                        rpixels[i, j] = (255, 255, 255)  # change it to white in the red image bitmap
-                    else: # dark pink or red	
-                        rpixels[i, j] = (0, 0, 0)  # and change it to black in the red image bitmap
+                    rpixels[i, j] = (0, 0, 0)  # and change it to black in the red image bitmap
 
         redimg = redimg.rotate(self.rotateAngle, expand=True)
         blackimg = blackimg.rotate(self.rotateAngle, expand=True)
