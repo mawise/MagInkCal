@@ -131,7 +131,9 @@ class GcalHelper:
             newEvent['isMultiday'] = self.is_multiday(newEvent['startDatetime'], newEvent['endDatetime'])
             eventList.append(newEvent)
 
+        # Dedup for when the same event appears on multiple source calendars
+        eventList = list(set(eventList))
+
         # We need to sort eventList because the event will be sorted in "calendar order" instead of hours order
-        # TODO: improve because of double cycle for now is not much cost
         eventList = sorted(eventList, key=lambda k: k['startDatetime'])
         return eventList
