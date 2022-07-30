@@ -132,7 +132,7 @@ class GcalHelper:
             eventList.append(newEvent)
 
         # Dedup for when the same event appears on multiple source calendars
-        eventList = list(set(eventList))
+        eventList = [dict(t) for t in list(set(tuple(sorted(d.items())) for d in eventList))]
 
         # We need to sort eventList because the event will be sorted in "calendar order" instead of hours order
         eventList = sorted(eventList, key=lambda k: k['startDatetime'])
