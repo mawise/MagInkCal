@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-This project is designed for the WaveShare 12.48" eInk display. Modifications will be needed for other displays,
-especially the display drivers and how the image is being rendered on the display. Also, this is the first project that
-I posted on GitHub so please go easy on me. There are still many parts of the code (especially with timezone
-conversions) that are not tested comprehensively, since my calendar/events are largely based on the timezone I'm in.
+This project is designed for the WaveShare 7.5" eInk display. Modifications will be needed for other displays,
+especially the display drivers and how the image is being rendered on the display. 
 There will also be work needed to adjust the calendar rendering for different screen sizes, such as modifying of the
 CSS stylesheets in the "render" folder.
 """

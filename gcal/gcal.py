@@ -126,8 +126,8 @@ class GcalHelper:
                 newEvent['endDatetime'] = self.adjust_end_time(self.to_datetime(event['end'].get('dateTime'), localTZ),
                                                                localTZ)
 
-            newEvent['updatedDatetime'] = self.to_datetime(event['updated'], localTZ)
-            newEvent['isUpdated'] = self.is_recent_updated(newEvent['updatedDatetime'], thresholdHours)
+            updatedDatetime = self.to_datetime(event['updated'], localTZ)
+            newEvent['isUpdated'] = self.is_recent_updated(updatedDatetime, thresholdHours)
             newEvent['isMultiday'] = self.is_multiday(newEvent['startDatetime'], newEvent['endDatetime'])
             eventList.append(newEvent)
 
