@@ -46,7 +46,7 @@
 
 dl, ol, ul {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 
 body {
@@ -125,8 +125,8 @@ Calendar Styling */
 
 .calendar .day-names li {
   text-transform: uppercase;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .calendar .days li {
